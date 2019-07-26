@@ -1,0 +1,5 @@
+agencia;conta;valor_transacao;tipo_transacao;saldo
+125;5479;R$ 500;entarda;R$ 500
+475;5796;R$ 158;saida;R$ 367
+157;3647;R$ 612;saida;R$ 212
+267;8900;R$ 80;saida;R$ 12,68
