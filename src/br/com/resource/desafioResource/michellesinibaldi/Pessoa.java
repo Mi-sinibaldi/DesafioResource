@@ -14,13 +14,11 @@ public class Pessoa {
     private ContaCorrente cc;
     private ContaPoupanca cp;
     
-    private int id;
     private String nome;
 
-    public Pessoa(ContaCorrente cc, ContaPoupanca cp, int id, String nome) {
+    public Pessoa(ContaCorrente cc, ContaPoupanca cp, String nome) {
         this.cc = cc;
         this.cp = cp;
-        this.id = id;
         this.nome = nome;
     }
     
@@ -40,14 +38,6 @@ public class Pessoa {
 
     public void setCp(ContaPoupanca cp) {
         this.cp = cp;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {

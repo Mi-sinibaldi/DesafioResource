@@ -7,10 +7,11 @@ package br.com.resource.desafioResource.michellesinibaldi;
  */
 public class ContaCorrente extends Conta {
 
-    public ContaCorrente(int id, double saldo) {
-        this.setId(id);
-        this.setSaldo(saldo);
+    public ContaCorrente(int agencia, int conta) {
+        this.setAgencia(agencia);
+        this.setConta(conta);
     }
+   
 
     public boolean sacar(double valor) {
         valor = valor + 10;
@@ -19,9 +20,7 @@ public class ContaCorrente extends Conta {
         }
         if (this.getSaldo() >= valor) {
             double aux = this.getSaldo() - valor;
-            this.setSaldo(aux);
-            return true;
-
+            return this.adicionarLancamento("debito", valor);
         }
         return false;
     }
@@ -31,9 +30,6 @@ public class ContaCorrente extends Conta {
             return false;
         }
         double aux = this.getSaldo() + valor;
-
-        this.setSaldo(aux);
-        return true;
+        return this.adicionarLancamento("credito", valor);
     }
-
 }

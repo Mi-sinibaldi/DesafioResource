@@ -16,10 +16,10 @@ public class LerEscreverArquivo {
 
         //GRAVAÇÃO
         String texto = "agencia;conta;valor_transacao;tipo_transacao;saldo\n"
-                + "125;5479;R$ 500;entarda;R$ 500\n"
-                + "475;5796;R$ 158;saida;R$ 367\n"
-                + "157;3647;R$ 612;saida;R$ 212\n"
-                + "267;8900;R$ 80;saida;R$ 12,68";
+                + "125;5479;500;entarda; 500\n"
+                + "475;5796;158;saida; 367\n"
+                + "157;3647;612;saida; 212\n"
+                + "267;8900;80;saida; 12,68";
 
         if (Arquivo.Write(arq, texto)) {
             System.out.println("Arquivo salvo com sucesso!");
@@ -32,7 +32,7 @@ public class LerEscreverArquivo {
         if (texto.isEmpty()) {
             System.out.println("Erro ao ler do arquivo!");
         } else {
-            System.out.println(texto);
+            //System.out.println(texto);
         }
 
     }

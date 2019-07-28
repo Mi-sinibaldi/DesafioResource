@@ -7,11 +7,11 @@ package br.com.resource.desafioResource.michellesinibaldi;
  */
 public class ContaPoupanca extends Conta {
     
-    public ContaPoupanca(int id, double saldo) {
-        this.setId(id);
-        this.setSaldo(saldo);
+      public ContaPoupanca(int agencia, int conta) {
+        this.setAgencia(agencia);
+        this.setConta(conta);
     }
-    
+      
     public boolean sacar(double valor) {
         valor = valor + 10;
         if (valor < 0) {
@@ -19,9 +19,7 @@ public class ContaPoupanca extends Conta {
         }
         if (this.getSaldo() >= valor) {
             double aux = this.getSaldo() - valor;
-            this.setSaldo(aux);
-            return true;
-
+            return this.adicionarLancamento("debito", valor);
         }
         return false;
     }
@@ -31,9 +29,6 @@ public class ContaPoupanca extends Conta {
             return false;
         }
         double aux = this.getSaldo() + valor;
-
-        this.setSaldo(aux);
-        return true;
+        return this.adicionarLancamento("credito", valor);
     }
-    
 }
